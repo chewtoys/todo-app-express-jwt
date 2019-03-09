@@ -3,7 +3,7 @@ const usersDAL = require('./usersDAL');
 
 class User {
 	static async insert(userData) {
-		console.log('Before insert' + userData);
+		console.log('Before insert' + JSON.stringify(userData));
 		let user = await usersDAL.createUser(userData);
 		return user;
 	}

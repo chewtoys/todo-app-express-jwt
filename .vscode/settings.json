@@ -9,5 +9,6 @@
     "prettier.jsxBracketSameLine": true,
     "prettier.noSpaceEmptyFn": true,
     "prettier.jsxSingleQuote": true,
-    "prettier.spaceBeforeFunctionParen": true
+    "prettier.spaceBeforeFunctionParen": true,
+    "git.ignoreLimitWarning": true
 }
