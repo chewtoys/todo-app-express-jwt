@@ -1,3 +1,4 @@
+//https://github.com/i0natan/nodebestpractices
 const knex = require('../../dbmiddleware/knex.js');
 const { message } = require('./usersErrorMessage');
 const strings = require('../../lib/strings.js');
