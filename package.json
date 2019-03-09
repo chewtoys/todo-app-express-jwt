@@ -13,7 +13,9 @@
 		"type": "git",
 		"url": "https://github.com/mondolmislam/todo-app-express-jwt.git"
 	},
-	"keywords": ["todo-app-express-jwt"],
+	"keywords": [
+		"todo-app-express-jwt"
+	],
 	"author": "Maidul Islam",
 	"license": "ISC",
 	"dependencies": {
@@ -23,6 +25,7 @@
 		"body-parser": "^1.18.3",
 		"config": "^3.0.1",
 		"express": "^4.16.4",
+		"humps": "^2.0.1",
 		"jsonwebtoken": "^8.5.0",
 		"knex": "^0.16.3",
 		"knex-logger": "^0.1.0",
