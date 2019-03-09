@@ -1,0 +1,9 @@
+//eslint
+//sudo npm install --save-dev eslint
+//sudo ./node_modules/.bin/eslint --init
+https://stackoverflow.com/questions/31629389/how-to-use-eslint-with-jest/40265356
+sudo npm install --global babel-cli
+sudo npm install -g eslint
+sudo npm install eslint --save-dev && sudo  npm uninstall eslint -g
+./node_modules/.bin/eslint --init
+./node_modules/.bin/eslint js --fix
