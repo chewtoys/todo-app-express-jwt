@@ -10,9 +10,9 @@ const path = require('path');
 //second command
 //openssl rsa -in private-key.pem -out public-key.pem -outform PEM -pubout
 //read private key from keys location
-const jwtPrivateKey = path.resolve('') + '/keys/private_key.pem';
+const jwtPrivateKey = path.resolve('') + '/keys/private-key.pem';
 //read pbulic key form keys location/directory
-const jwtPublicKey = path.resolve('') + '/keys/public_key.pem';
+const jwtPublicKey = path.resolve('') + '/keys/public-key.pem';
 // generate tokey for jwt with jwtSign method
 //async method and arrow functions of javascript
 module.exports.generateToken = async (id, name, type) => {
@@ -49,7 +49,7 @@ The executor should call only one resolve or one reject . The promise's state ch
 const jwtSign = payload => {
 	const options = {
 		algorithm: 'RS256',
-		exparesIn: '24h'
+		expiresIn: '24h'
 	};
 	//return promising way
 	return new Promise((resolve, reject) => {

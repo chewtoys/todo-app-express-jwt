@@ -7,7 +7,7 @@ exports.up = (knex, Promise) => {
 					t.string('user_name').notNullable();
 					t.string('email').notNullable();
 					t.string('password', 255);
-					t.integer('users_id').unsigned();
+					t.integer('role_id').unsigned();
 					t.string('confirm_token', 100);
 					t.boolean('send_mail');
 					t.boolean('confirm');
@@ -15,7 +15,7 @@ exports.up = (knex, Promise) => {
 					t.string('resetpassword_token', 100);
 					t.boolean('reset_password');
 					// relation with users role table because user has different role
-					t.foreign('users_id')
+					t.foreign('role_id')
 						.references('id')
 						.on('users_role');
 					t.timestamp('created_at').defaultTo(knex.fn.now());

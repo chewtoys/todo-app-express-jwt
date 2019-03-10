@@ -11,6 +11,7 @@ class User {
 	//user login
 	static async login(nameOrEmail, password) {
 		try {
+			console.log('try login...');
 			const loggedUser = await usersDAL.login(nameOrEmail, password);
 			return camelizeKeys(loggedUser);
 		} catch (error) {

@@ -20,7 +20,7 @@ module.exports.createUser = async usersData => {
 				user_name: usersData.name,
 				password: strings.hash(usersData.password),
 				email: usersData.email,
-				users_id: 1
+				role_id: 1
 			}
 		];
 		let result = knex('users').insert(data);
