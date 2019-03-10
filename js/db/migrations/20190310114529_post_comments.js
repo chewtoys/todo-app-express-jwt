@@ -1,16 +1,20 @@
 exports.up = function(knex, Promise) {
 	return Promise.all([
-		knex.schema.hasTable('posts').then(exists => {
+		knex.schema.hasTable('comments').then(exists => {
 			if (!exists) {
-				return knex.schema.createTable('posts', t => {
+				return knex.schema.createTable('comments', t => {
 					t.increments('id').primary();
-					t.string('title').notNullable();
-					t.text('details');
-					t.integer('user_id').unsigned();
+					t.text('comments');
+					t.integer('users_id').unsigned();
 					// relation with users role table because user has different role
-					t.foreign('user_id')
+					t.foreign('users_id')
 						.references('id')
 						.on('users');
+					t.integer('posts_id').unsigned();
+					// relation with users role table because user has different role
+					t.foreign('posts_id')
+						.references('id')
+						.on('posts');
 					t.timestamp('created_at').defaultTo(knex.fn.now());
 					t.timestamp('updated_at').defaultTo(knex.fn.now());
 				});
@@ -23,9 +27,9 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
 	return Promise.all([
-		knex.schema.hasTable('posts').then(exists => {
+		knex.schema.hasTable('comments').then(exists => {
 			if (exists) {
-				return knex.schema.dropTable('posts');
+				return knex.schema.dropTable('comments');
 			}
 		})
 	]);
