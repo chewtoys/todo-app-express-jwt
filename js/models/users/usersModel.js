@@ -18,6 +18,26 @@ class User {
 			throw error;
 		}
 	}
+	//user login
+	static async update(user_id, token) {
+		try {
+			console.log('try to update...');
+			const loggedUser = await usersDAL.update(user_id, token);
+			return camelizeKeys(loggedUser);
+		} catch (error) {
+			throw error;
+		}
+	}
+	//user login
+	static async userTokenCheck(token) {
+		try {
+			//console.log('try to check token...');
+			const loggedUser = await usersDAL.userTokenCheck(token);
+			return camelizeKeys(loggedUser);
+		} catch (error) {
+			throw error;
+		}
+	}
 }
 
 module.exports.User = User;

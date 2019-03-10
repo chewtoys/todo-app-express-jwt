@@ -8,7 +8,7 @@ exports.up = (knex, Promise) => {
 					t.string('email').notNullable();
 					t.string('password', 255);
 					t.integer('role_id').unsigned();
-					t.string('confirm_token', 100);
+					t.text('confirm_token');
 					t.boolean('send_mail');
 					t.boolean('confirm');
 					t.boolean('approval');

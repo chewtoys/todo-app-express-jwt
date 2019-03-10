@@ -49,8 +49,9 @@ router.post('/user_login', async (req, res) => {
 				.then(token => {
 					const response = {
 						token: token,
-						user_id: users.id
+						type: 'Bearer'
 					};
+					usersLogin.User.update(users.id, token);
 					res.json(response);
 				})
 				.catch(err => {

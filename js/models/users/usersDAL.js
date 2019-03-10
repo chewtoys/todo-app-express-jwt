@@ -43,3 +43,26 @@ module.exports.login = async (name, pass) => {
 	}
 	return user;
 };
+module.exports.update = async (user_id, token) => {
+	const user = await knex('users')
+		.where('id', '=', user_id)
+		.update({ confirm_token: token });
+	if (!user) {
+		throw new ModelError('not found', constants.NOTFOUND);
+	}
+
+	return user;
+};
+
+module.exports.userTokenCheck = async token => {
+	//console.log(token);
+	const user = await knex
+		.select('*')
+		.from('users')
+		.where('confirm_token', token);
+	if (!user) {
+		throw new ModelError('not found', constants.NOTFOUND);
+	}
+	//console.log(JSON.stringify(user));
+	return user;
+};

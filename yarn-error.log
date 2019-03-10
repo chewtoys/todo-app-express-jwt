@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add bcrypt@3.0.1
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js lint
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  /media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/tmp/yarn--1552193313192-0.2933309782450617:/media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/home/maidul/.config/yarn/link/node_modules/.bin:/media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/home/maidul/.config/yarn/link/node_modules/.bin:/home/maidul/.yarn/bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
   1.13.0
@@ -14,54 +14,68 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/define-property/node_modules/kind-of'
+  Error: EIO: i/o error, write
+      at writeSync (fs.js:589:3)
+      at SyncWriteStream._write (internal/fs/sync_write_stream.js:22:3)
+      at doWrite (_stream_writable.js:415:12)
+      at writeOrBuffer (_stream_writable.js:399:5)
+      at SyncWriteStream.Writable.write (_stream_writable.js:299:11)
+      at ConsoleReporter._log (/usr/share/yarn/lib/cli.js:96040:17)
+      at ConsoleReporter.log (/usr/share/yarn/lib/cli.js:96028:10)
+      at ConsoleReporter.command (/usr/share/yarn/lib/cli.js:96057:10)
+      at /usr/share/yarn/lib/cli.js:36905:16
+      at Generator.next (<anonymous>)
 
 npm manifest: 
   {
-    "name": "express-jwt-basic",
-    "version": "1.0.0",
-    "description": "basic express and jwt",
-    "main": "app.js",
-    "scripts": {
-      "serve": "nodemon --exec 'yarn lint && babel-node app.js'",
-      "build": "node_modules/.bin/babel js --out-dir dist",
-      "lint": "node_modules/.bin/eslint js/*",
-      "bcrypt": "node command/bcrypt.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/mondolmislam/todo-app-express-jwt.git"
-    },
-    "keywords": [
-      "todo-app-express-jwt"
-    ],
-    "author": "Maidul Islam",
-    "license": "ISC",
-    "dependencies": {
-      "@sendgrid/mail": "^6.3.1",
-      "bcrypt": "^3.0.4",
-      "body-parser": "^1.18.3",
-      "config": "^3.0.1",
-      "express": "^4.16.4",
-      "jsonwebtoken": "^8.5.0",
-      "knex": "^0.16.3",
-      "knex-logger": "^0.1.0",
-      "multer": "^1.4.1",
-      "nodemon": "^1.18.10",
-      "pg": "^7.8.1"
-    },
-    "devDependencies": {
-      "eslint": "^5.15.1",
-      "eslint-config-airbnb": "^17.1.0",
-      "eslint-config-airbnb-base": "^13.1.0",
-      "eslint-config-standard": "^12.0.0",
-      "eslint-plugin-import": "^2.16.0",
-      "eslint-plugin-jsx-a11y": "^6.2.1",
-      "eslint-plugin-node": "^8.0.1",
-      "eslint-plugin-promise": "^4.0.1",
-      "eslint-plugin-react": "^7.12.4",
-      "eslint-plugin-standard": "^4.0.0"
-    }
+  	"name": "express-jwt-basic",
+  	"version": "1.0.0",
+  	"description": "basic express and jwt",
+  	"main": "app.js",
+  	"scripts": {
+  		"serve": "nodemon --exec 'yarn lint && babel-node js/app.js'",
+  		"build": "node_modules/.bin/babel js --out-dir dist",
+  		"lint": "node_modules/.bin/eslint js/*",
+  		"bcrypt": "node command/bcrypt.js"
+  	},
+  	"repository": {
+  		"type": "git",
+  		"url": "https://github.com/mondolmislam/todo-app-express-jwt.git"
+  	},
+  	"keywords": [
+  		"todo-app-express-jwt"
+  	],
+  	"author": "Maidul Islam",
+  	"license": "ISC",
+  	"dependencies": {
+  		"@sendgrid/mail": "^6.3.1",
+  		"babel-preset-env": "^1.7.0",
+  		"bcrypt": "^3.0.4",
+  		"body-parser": "^1.18.3",
+  		"config": "^3.0.1",
+  		"express": "^4.16.4",
+  		"express-validator": "^5.3.1",
+  		"humps": "^2.0.1",
+  		"jsonwebtoken": "^8.5.0",
+  		"knex": "^0.16.3",
+  		"knex-logger": "^0.1.0",
+  		"multer": "^1.4.1",
+  		"nodemon": "^1.18.10",
+  		"pg": "^7.8.1"
+  	},
+  	"devDependencies": {
+  		"eslint": "^5.15.1",
+  		"eslint-config-airbnb": "^17.1.0",
+  		"eslint-config-airbnb-base": "^13.1.0",
+  		"eslint-config-standard": "^12.0.0",
+  		"eslint-plugin-import": "^2.16.0",
+  		"eslint-plugin-jsx-a11y": "^6.2.1",
+  		"eslint-plugin-node": "^8.0.1",
+  		"eslint-plugin-promise": "^4.0.1",
+  		"eslint-plugin-react": "^7.12.4",
+  		"eslint-plugin-standard": "^4.0.0",
+  		"prettier-eslint": "^8.8.2"
+  	}
   }
 
 yarn manifest: 
@@ -398,13 +412,13 @@ Lockfile:
     dependencies:
       tweetnacl "^0.14.3"
   
-  bcrypt@^3.0.4:
-    version "3.0.4"
-    resolved "https://registry.yarnpkg.com/bcrypt/-/bcrypt-3.0.4.tgz#1c881379ddf21bcade56e3172669d27152d90d50"
-    integrity sha512-XqmCym97kT6l+jFEKeFvGuNE9aVEFDGsLMv+tIBTXkJI1sHS0g8s7VQEPJagSMPwWiB5Vpr2kVzVKc/YfwWthA==
+  bcrypt@3.0.1:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/bcrypt/-/bcrypt-3.0.1.tgz#2ea12883330bf5f81926f70475cf21bdd0c2f8ff"
+    integrity sha512-DSTLQZdvzJ7znQ1WOqkN3X0Hutt6BTVaZNWyX8/B4P+s9SIxkYgtGKfgHokli1syPcWJUE63/kGVyV1ECA4d1A==
     dependencies:
-      nan "2.12.1"
-      node-pre-gyp "0.12.0"
+      nan "2.11.0"
+      node-pre-gyp "0.11.0"
   
   binary-extensions@^1.0.0:
     version "1.13.0"
@@ -2498,7 +2512,12 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
     integrity sha1-MHXOk7whuPq0PhvE2n6BFe0ee6s=
   
-  nan@2.12.1, nan@^2.9.2:
+  nan@2.11.0:
+    version "2.11.0"
+    resolved "https://registry.yarnpkg.com/nan/-/nan-2.11.0.tgz#574e360e4d954ab16966ec102c0c049fd961a099"
+    integrity sha512-F4miItu2rGnV2ySkXOQoA8FKz/SR2Q2sWP0sbTxNxz/tuokeC8WxOhPMcwi0qIyGtVn/rrSeLbvVkznqCdwYnw==
+  
+  nan@^2.9.2:
     version "2.12.1"
     resolved "https://registry.yarnpkg.com/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
     integrity sha512-JY7V6lRkStKcKTvHO5NVSQRv+RV+FIL5pvDoLiAtSL9pKlC5x9PKQcZDsq7m4FO4d57mkhC6Z+QhAh3Jdk5JFw==
@@ -2544,10 +2563,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
     integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
   
-  node-pre-gyp@0.12.0:
-    version "0.12.0"
-    resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.12.0.tgz#39ba4bb1439da030295f899e3b520b7785766149"
-    integrity sha512-4KghwV8vH5k+g2ylT+sLTjy5wmUOb9vPhnM8NHvRf9dHmnW/CndrFXy2aRPaPST6dugXSdHXfeaHQm77PIz/1A==
+  node-pre-gyp@0.11.0:
+    version "0.11.0"
+    resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.11.0.tgz#db1f33215272f692cd38f03238e3e9b47c5dd054"
+    integrity sha512-TwWAOZb0j7e9eGaf9esRx3ZcLaE5tQ2lvYy1pb5IAaG1a2e2Kv5Lms1Y4hpj+ciXJRofIxxlt5haeQ/2ANeE0Q==
     dependencies:
       detect-libc "^1.0.2"
       mkdirp "^0.5.1"
