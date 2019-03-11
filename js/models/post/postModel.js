@@ -34,6 +34,15 @@ class Post {
 			return camelizeKeys(error.message);
 		}
 	}
+	static async deletePost(post_id) {
+		console.log('postDAL calling ...');
+		try {
+			let post = await postDAL.deletePost(post_id);
+			return camelizeKeys(post);
+		} catch (error) {
+			return camelizeKeys(error.message);
+		}
+	}
 }
 
 module.exports.Post = Post;
