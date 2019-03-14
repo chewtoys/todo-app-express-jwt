@@ -16,6 +16,7 @@ module.exports.createComments = async commentsData => {
 				posts_id: commentsData.post_id
 			}
 		];
+		console.log(commentsData.post_id);
 		let result = knex('comments').insert(data);
 		return result;
 	} catch (error) {

@@ -40,9 +40,9 @@ router.get('/getAllPostWithComment', async (req, res) => {
 router.post('/create', async (req, res) => {
 	try {
 		const token = req.headers.authorization.split(' ')[1];
-		//console.log(token);
+		console.log('get post data');
 		let users = await Users.User.userTokenCheck(token);
-		console.log(JSON.stringify(users));
+		console.log(users[0].id);
 		console.log('users id.....');
 		if (!users) {
 			let err = {
@@ -68,6 +68,21 @@ router.get('/delete/:id', async (req, res) => {
 		let deletes = await Post.Post.deletePost(post_id);
 		if (deletes) {
 			res.send(JSON.stringify(response));
+		} else {
+			console.log('post does not delete');
+		}
+	} catch (error) {
+		res.status(401).send(JSON.stringify(error.message));
+	}
+});
+router.get('/getPostById/:id', async (req, res) => {
+	console.log('deleting....');
+	try {
+		let post_id = req.params.id;
+		console.log(post_id);
+		let deletes = await Post.Post.getPostById(post_id);
+		if (deletes) {
+			res.send(JSON.stringify(deletes));
 		} else {
 			console.log('post does not delete');
 		}

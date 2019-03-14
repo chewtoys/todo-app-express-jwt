@@ -2,7 +2,7 @@ Arguments:
   /usr/local/bin/node /usr/share/yarn/bin/yarn.js lint
 
 PATH: 
-  /media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/tmp/yarn--1552207717250-0.7904374279250019:/media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/home/maidul/.config/yarn/link/node_modules/.bin:/media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/home/maidul/.config/yarn/link/node_modules/.bin:/home/maidul/.yarn/bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  /media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/tmp/yarn--1552445836840-0.17596403177425257:/media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/home/maidul/.config/yarn/link/node_modules/.bin:/media/maidul/f0037443-483c-453c-9279-4cb14193e6eb/practices/todo-app/node_modules/.bin:/home/maidul/.config/yarn/link/node_modules/.bin:/home/maidul/.yarn/bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 Yarn version: 
   1.13.0

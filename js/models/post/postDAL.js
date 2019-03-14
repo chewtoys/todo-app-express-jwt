@@ -73,3 +73,19 @@ module.exports.deletePost = async post_id => {
 				.where('id', post_id);
 		});
 };
+module.exports.getPostById = async post_id => {
+	console.log('getting data............' + post_id);
+	let allpost = knex
+		.select([
+			'posts.id',
+			'posts.title',
+			'posts.details',
+			'posts.user_id',
+			knex.raw('json_agg(comm.*) as all_comments')
+		])
+		.from('posts')
+		.where('posts.id', post_id)
+		.leftJoin('comments as comm', 'posts.id', 'comm.posts_id')
+		.groupBy('posts.id');
+	return allpost;
+};

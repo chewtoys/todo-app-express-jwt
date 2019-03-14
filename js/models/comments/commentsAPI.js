@@ -6,9 +6,9 @@ const Users = require('../users/usersModel');
 router.post('/create', async (req, res) => {
 	try {
 		const token = req.headers.authorization.split(' ')[1];
-		//console.log(token);
+		console.log(token);
 		let users = await Users.User.userTokenCheck(token);
-		console.log(JSON.stringify(users));
+		console.log(JSON.stringify(req.body));
 		if (!users) {
 			let err = {
 				error: 'Not authorized'

@@ -31,13 +31,12 @@ module.exports.createUser = async usersData => {
 };
 module.exports.login = async (name, pass) => {
 	const user = await knex('users')
-		.where('user_name', name)
-		.orWhere('email', name)
+		.where('email', name)
 		.first();
 	if (!user) {
 		throw new ModelError('not found', constants.NOTFOUND);
 	}
-	const match = await strings.compareHash(pass, user.password);
+	const match = strings.compareHash(pass, user.password);
 	if (!match) {
 		throw new Error('login failed');
 	}
